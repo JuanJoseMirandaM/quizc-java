@@ -3,6 +3,8 @@ package org.fundacionjala.app.quizz.console;
 import org.fundacionjala.app.quizz.model.Question;
 import org.fundacionjala.app.quizz.model.Quiz;
 
+import java.util.Scanner;
+
 public class QuizUIMenu {
 
     public Quiz handleCreateQuiz() {
@@ -32,7 +34,9 @@ public class QuizUIMenu {
 
     private char readOption() {
         System.out.print("> ");
-        return System.console().readLine().trim().charAt(0);
+//        return System.console().readLine().trim().charAt(0);
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextLine().trim().charAt(0);
     }
 
     private void showMenu() {
@@ -44,6 +48,8 @@ public class QuizUIMenu {
     private String askQuizTitle() {
         System.out.println("Type the quiz title");
         System.out.print("> ");
-        return System.console().readLine();
+//        return System.console().readLine();
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextLine();
     }
 }

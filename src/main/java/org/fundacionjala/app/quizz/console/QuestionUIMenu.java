@@ -2,6 +2,7 @@ package org.fundacionjala.app.quizz.console;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import org.fundacionjala.app.quizz.model.Question;
 import org.fundacionjala.app.quizz.model.QuestionType;
@@ -65,7 +66,9 @@ public class QuestionUIMenu {
                 case '1':
                     System.out.println("Option value");
                     System.out.print("> ");
-                    additionalData.add(System.console().readLine());
+                    Scanner scanner = new Scanner(System.in);
+                additionalData.add(scanner.nextLine());
+//                    additionalData.add(System.console().readLine());
                     break;
                 case '0':
                     shouldExit = true;
@@ -93,11 +96,15 @@ public class QuestionUIMenu {
     private String askQuestionTitle() {
         System.out.println("Type the question title");
         System.out.print("> ");
-        return System.console().readLine();
+//        return System.console().readLine();
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextLine();
     }
 
     private char readOption() {
         System.out.print("> ");
-        return System.console().readLine().trim().charAt(0);
+//        return System.console().readLine().trim().charAt(0);
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextLine().trim().charAt(0);
     }
 }

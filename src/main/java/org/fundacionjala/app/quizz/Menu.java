@@ -4,8 +4,9 @@ import org.fundacionjala.app.quizz.console.QuizUIHandler;
 import org.fundacionjala.app.quizz.model.Quiz;
 import org.fundacionjala.app.quizz.model.QuizAnswers;
 
-public class Menu {
+import java.util.Scanner;
 
+public class Menu {
     private Quiz quiz;
     private QuizAnswers quizAnswers;
 
@@ -70,6 +71,8 @@ public class Menu {
 
     private char readOption() {
         System.out.print("> ");
-        return System.console().readLine().trim().charAt(0);
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextLine().trim().charAt(0);
+//        return System.console().readLine().trim().charAt(0);
     }
 }

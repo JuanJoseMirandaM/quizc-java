@@ -1,5 +1,6 @@
 package org.fundacionjala.app.quizz.console;
 
+import java.util.Scanner;
 import java.util.Set;
 
 import org.fundacionjala.app.quizz.model.Answer;
@@ -37,6 +38,8 @@ public class QuizUIHandler {
 
 		System.out.println("=============================================");
 		System.out.println("Press ENTER to continue");
-		System.console().readLine();
+		Scanner scanner = new Scanner(System.in);
+		scanner.nextLine();
+//		System.console().readLine();
 	}
 }

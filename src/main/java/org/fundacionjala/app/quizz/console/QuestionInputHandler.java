@@ -1,6 +1,7 @@
 package org.fundacionjala.app.quizz.console;
 
 import java.util.HashSet;
+import java.util.Scanner;
 import java.util.Set;
 
 import org.fundacionjala.app.quizz.model.Question;
@@ -17,8 +18,25 @@ public class QuestionInputHandler {
         if (question.getType().getConfiguration().hasAdditionalData()) {
             answers.add(collectAnswerFromOptions(question));
         } else {
-            System.out.print(question.getType().getName() + " value: ");
-            String value = System.console().readLine();
+            String ejemplo = "";
+            switch (question.getType().getName()){
+                case "Text":
+                    ejemplo = "Este es un texto";
+                    break;
+                case "Date":
+                    ejemplo = "26/01/2021";
+                    break;
+                case "Pick One":
+                    ejemplo = "masculino/femenino";
+                    break;
+                case "Numeric":
+                    ejemplo = "22";
+                    break;
+            }
+            System.out.print(question.getType().getName()+" (Ej. "+ejemplo+ ") value: ");
+//            String value = System.console().readLine();
+            Scanner scanner = new Scanner(System.in);
+            String value = scanner.nextLine();
             answers.add(value);
         }
 
@@ -49,6 +67,8 @@ public class QuestionInputHandler {
 
     private char readOption() {
         System.out.print("> ");
-        return System.console().readLine().trim().charAt(0);
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextLine().trim().charAt(0);
+//        return System.console().readLine().trim().charAt(0);
     }
 }
